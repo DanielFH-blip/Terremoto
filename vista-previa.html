@@ -1,0 +1,228 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Qué llevar y dónde entregarlo</title><style>
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:#FAF9F6;color:#1A1A1A;
+ font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+ font-size:17px;line-height:1.6;-webkit-text-size-adjust:100%}
+.wrap{max-width:640px;margin:0 auto;padding:0 22px 90px}
+h1,h2,h3{font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+ font-weight:600;letter-spacing:-.005em}
+
+/* Cabecera: sin bloque oscuro, solo tipografia y una regla */
+header{padding:38px 0 0}
+h1{font-size:2rem;margin:0 0 12px;line-height:1.18}
+.quees{font-size:1.02rem;color:#3A3833;margin:0 0 6px;max-width:34em}
+.quees b{font-weight:600}
+.stamp{font-size:.84rem;color:#807C74;margin:18px 0 0;padding-top:16px;
+ border-top:1px solid #DAD6CE}
+
+/* Controles */
+.ctrl{margin:26px 0 40px}
+.tabs{display:flex;gap:26px;border-bottom:1px solid #DAD6CE;margin:0 0 22px}
+.mbtn{background:none;border:none;border-bottom:2px solid transparent;
+ font-family:inherit;font-size:1rem;color:#807C74;padding:0 0 11px;
+ cursor:pointer;margin-bottom:-1px}
+.mbtn:hover{color:#1A1A1A}
+.mbtn[aria-pressed="true"]{color:#1A1A1A;font-weight:600;border-bottom-color:#A32218}
+label.lb{display:block;font-size:.94rem;color:#3A3833;margin:0 0 8px}
+select{width:100%;max-width:340px;font-family:inherit;font-size:1.06rem;
+ padding:12px 14px;border:1px solid #B9B4A9;background:#fff;color:#1A1A1A;
+ border-radius:3px;-webkit-appearance:none;appearance:none;
+ background-image:url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23807C74' stroke-width='1.6' fill='none'/%3E%3C/svg%3E");
+ background-repeat:no-repeat;background-position:right 14px center}
+.nota-dinero{margin:0;font-size:.96rem;color:#3A3833}
+
+/* Lo mas pedido: lista tipografica, sin caja de color */
+.top{margin:0 0 42px}
+.top h2{font-size:1.34rem;margin:0 0 3px}
+.top-sub{margin:0 0 18px;font-size:.9rem;color:#807C74}
+.top-item{padding:10px 0;border-bottom:1px solid #E8E4DC}
+.top-t{font-size:1.14rem;display:block}
+.top-o{font-size:.79rem;color:#807C74;display:block;margin-top:1px}
+.top-n{float:right;font-size:.79rem;color:#807C74;margin-left:12px;
+ padding-top:5px}
+.top-n.vacia{display:none}
+.top-pie{margin:16px 0 0;font-size:.87rem;color:#807C74}
+
+/* Advertencia: regla roja lateral, no bloque saturado */
+.no{border-left:3px solid #A32218;padding:2px 0 2px 20px;margin:0 0 46px}
+.no h2{margin:0 0 10px;font-size:1.2rem;color:#A32218}
+.no ul{margin:0;padding-left:20px}
+.no li{margin-bottom:6px}
+.no .nota{margin:15px 0 0;font-size:.89rem;color:#5C5850;line-height:1.55}
+
+/* Secciones de organizacion: sin tarjetas */
+section{margin-bottom:48px}
+h2.org{font-size:1.46rem;margin:0 0 5px;line-height:1.22}
+.ambito{font-size:.95rem;color:#5C5850;margin:0 0 22px}
+.inst{font-size:.85rem;color:#A32218;margin:0 0 6px;font-style:italic}
+.lbl{font-size:.8rem;letter-spacing:.02em;color:#807C74;margin:0 0 10px;
+ font-weight:600}
+.cats{display:grid;grid-template-columns:1fr 1fr;gap:18px 30px;margin:0 0 24px}
+.cat h4{font-family:inherit;font-size:.9rem;font-weight:700;margin:0 0 6px;
+ color:#3A3833}
+.cat ul{margin:0;padding-left:19px}
+.cat li{margin-bottom:3px;font-size:.97rem}
+.negativo{border-left:2px solid #A32218;padding-left:16px;margin:0 0 22px}
+.negativo .lbl{color:#A32218;margin-bottom:5px}
+.negativo ul{margin:0;padding-left:19px;font-size:.96rem}
+.cond{font-size:.93rem;color:#5C5850;margin:0 0 22px;font-style:italic}
+.puntos{border-top:1px solid #DAD6CE;padding-top:15px}
+.punto{padding:9px 0;border-bottom:1px solid #EFECE5}
+.punto:last-child{border-bottom:none}
+.punto b{display:block;font-weight:600;font-size:.99rem}
+.punto span{font-size:.93rem;color:#5C5850}
+.fuente{margin-top:18px;font-size:.83rem;color:#807C74}
+.fuente a{color:#5C5850}
+.fuente .sep{margin:0 7px;color:#C4BFB5}
+.warn{color:#A32218}
+.tag{font-style:italic}
+.dot{display:none}
+
+/* Dinero */
+h2.simple{font-size:1.34rem;margin:0 0 8px}
+.aviso-plata{font-size:.94rem;color:#5C5850;border-left:2px solid #DAD6CE;
+ padding-left:16px;margin:0 0 30px;line-height:1.6}
+.canal{padding:0 0 26px;margin-bottom:26px;border-bottom:1px solid #E8E4DC}
+.canal:last-of-type{border-bottom:none}
+.canal h3{margin:0 0 4px;font-size:1.2rem}
+.dtexto{margin:0 0 14px;font-size:.95rem;color:#5C5850}
+.dlink{display:inline-block;color:#1A1A1A;text-decoration:none;
+ border:1px solid #1A1A1A;padding:10px 18px;font-size:.97rem;
+ word-break:break-all}
+.dlink:hover{background:#1A1A1A;color:#FAF9F6}
+.cuenta{margin:16px 0 0}
+.cuenta .ck{font-size:.79rem;color:#5C5850;display:block}
+.cuenta b{display:block;font-size:1.1rem;margin-top:3px;
+ font-variant-numeric:tabular-nums;letter-spacing:.03em}
+.cuenta.sin .ck{color:#807C74;font-style:italic}
+.dnota{margin:14px 0 0;font-size:.89rem;color:#5C5850;line-height:1.55}
+.dfuente{margin:12px 0 0;font-size:.8rem}
+.dfuente a{color:#807C74}
+
+/* Pendientes y vacio */
+.pendiente{padding:14px 0;border-bottom:1px solid #EFECE5;font-size:.95rem}
+.pendiente b{display:block;font-weight:600}
+.pendiente span{color:#5C5850}
+.vacio{border-left:3px solid #A32218;padding:2px 0 2px 20px;margin:0 0 34px}
+.vacio b{display:block;font-weight:600;margin-bottom:5px}
+.ir-dinero{margin-top:14px;background:none;border:1px solid #1A1A1A;
+ color:#1A1A1A;padding:10px 18px;font-family:inherit;font-size:.96rem;
+ cursor:pointer}
+.ir-dinero:hover{background:#1A1A1A;color:#FAF9F6}
+
+footer{margin-top:52px;padding-top:20px;border-top:1px solid #DAD6CE;
+ font-size:.87rem;color:#807C74;line-height:1.6}
+[hidden]{display:none !important}
+@media(max-width:560px){
+ body{font-size:16px}
+ h1{font-size:1.6rem}h2.org{font-size:1.26rem}
+ .cats{grid-template-columns:1fr;gap:16px}
+ .wrap{padding:0 18px 70px}
+ header{padding-top:28px}
+}
+</style></head><body><div class="wrap"><header><h1>Qué llevar y dónde entregarlo</h1><p class="quees">Esta página reúne, en un solo lugar, lo que cada organización oficial ha publicado que necesita tras el terremoto del 10 de agosto. Elija su ciudad y verá qué piden los puntos que reciben ahí, con enlace a la fuente de cada dato.</p><p class="quees">No es una página del Gobierno ni de ninguna de estas organizaciones, y no recibe donaciones ni dinero. Solo recopila y cita. Ante cualquier duda, confirme con el punto antes de desplazarse.</p><p class="stamp">Revisado el 11 de agosto de 2026, 10:06, hora de Bogot&aacute;.</p></header><div class="ctrl"><div class="tabs" role="group" aria-label="Tipo de donaci&oacute;n"><button class="mbtn" data-modo="especie" aria-pressed="true">Llevar cosas</button><button class="mbtn" data-modo="dinero" aria-pressed="false">Donar dinero</button></div><div id="ciudades"><label class="lb" for="sel-ciudad">&iquest;En qu&eacute; ciudad puede entregar?</label><select id="sel-ciudad"><option value="todas">Todas las ciudades</option><option value="Cali">Cali (alerta roja)</option><option value="Manizales">Manizales (alerta roja)</option><option value="Armenia">Armenia (alerta roja)</option><option value="Quibdó">Quibdó (alerta roja)</option><option value="Pereira">Pereira (alerta roja)</option><option value="Buenaventura">Buenaventura</option><option value="Bogotá">Bogotá</option><option value="Medellín">Medellín</option><option value="Barranquilla">Barranquilla</option><option value="Ibagué">Ibagué</option></select></div><p id="nota-dinero" class="nota-dinero" hidden>Una transferencia llega aunque usted no pueda desplazarse, y tambi&eacute;n a las zonas donde todav&iacute;a no hay punto de acopio.</p></div><div class="top" id="top"></div><div class="vacio" id="vacio" hidden><b>Aqu&iacute; todav&iacute;a no hay d&oacute;nde entregar</b>Ninguna organizaci&oacute;n con punto en esta ciudad ha publicado qu&eacute; necesita. Puede elegir otra ciudad, o donar en dinero: eso s&iacute; llega a esta zona.<br><button class="ir-dinero" data-modo="dinero">Ver c&oacute;mo donar dinero</button></div><div class="no" id="no-llevar"><h2>Qu&eacute; no llevar</h2><ul><li>Productos vencidos o próximos a vencer</li><li>Alimentos perecederos</li><li>Cualquier cosa que no esté en la lista del punto al que va</li></ul><p class="nota">No hay una lista nacional de artículos prohibidos. Circulan mensajes diciendo que no se recibe ropa ni medicamentos: eso no está publicado por Cruz Roja ni por las alcaldías, y Barranquilla sí recibe ropa en buen estado. Guíese por la lista del punto al que va.</p></div><section data-grupo="0"><h2 class="org">Cruz Roja Colombiana</h2><p class="ambito">Se recibe en Bogotá y se envía a Cali, Manizales, Pereira y Quibdó</p><p class="lbl">Piden:</p><div class="cats"><div class="cat"><h4>Para dormir</h4><ul><li>Cobijas y mantas</li><li>Colchonetas</li><li>Almohadas</li><li>Toldillos</li></ul></div><div class="cat"><h4>Agua y alimentos</h4><ul><li>Agua potable embotellada</li><li>Arroz, pastas y harina</li><li>Aceite</li><li>Enlatados abre fácil</li><li>Fríjol y lentejas</li><li>Panela</li><li>Leche en polvo</li><li>Chocolate en polvo</li></ul></div><div class="cat"><h4>Primeros auxilios</h4><ul><li>Tapabocas</li><li>Gasas estériles</li><li>Alcohol y clorhexidina</li><li>Guantes quirúrgicos y de látex</li></ul></div><div class="cat"><h4>Higiene personal</h4><ul><li>Jabón y shampoo</li><li>Crema y cepillos dentales</li><li>Toallas higiénicas</li><li>Papel higiénico</li><li>Pañales de niño y adulto, todas las tallas</li><li>Toallitas húmedas</li><li>Crema antipañalitis</li><li>Biberones</li></ul></div></div><p class="cond">Revise las fechas de vencimiento antes de llevar.</p><p class="lbl">Se entrega en:</p><div class="puntos"><div class="punto" data-ciudad="Bogotá"><b>SAMU Sur</b><span>Av. Carrera 68 # 31-41 sur, Bogotá</span></div><div class="punto" data-ciudad="Bogotá"><b>SAMU Norte</b><span>Calle 134 con Cra. 7B Bis # 132-31, Bogotá</span></div><div class="punto" data-ciudad="Bogotá"><b>Centro de Salvamento Acuático</b><span>Av. La Esmeralda # 63-81, Bogotá</span></div><div class="punto" data-ciudad="Bogotá"><b>Sede administrativa Cruz Roja</b><span>Carrera 24 # 73-38, Bogotá</span></div><div class="punto" data-ciudad="Bogotá"><b>Bodega Cruz Roja</b><span>Diagonal 79B # 62-53, Bogotá</span></div><div class="punto" data-ciudad="Bogotá"><b>Palacio de los Deportes</b><span>Calle 63 # 59A-06, Bogotá</span></div></div><p class="fuente">verificado hace menos de 1 hora<span class="sep">&middot;</span><a href="https://bogota.gov.co/mi-ciudad/seguridad/puntos-de-donacion-en-bogota-para-damnificados-terremoto-en-colombia" target="_blank" rel="noopener">Alcaldía Mayor de Bogotá, 10 ago 2026</a>.</p></section><section data-grupo="1"><h2 class="org">Alcaldía de Cali</h2><p class="ambito">Pide equipo de protección para las labores de rescate, no despensa</p><p class="lbl">Piden:</p><div class="cats"><div class="cat"><h4>Protección para rescate</h4><ul><li>Guantes de construcción</li><li>Cascos</li><li>Gafas de seguridad</li></ul></div><div class="cat"><h4>Otros</h4><ul><li>Agua</li><li>Colchonetas</li></ul></div></div><p class="lbl">Se entrega en:</p><div class="puntos"><div class="punto" data-ciudad="Cali"><b>Plazoleta Jairo Varela</b><span>Av. 2 Norte # 10N-1, frente al CAM, Cali</span></div><div class="punto" data-ciudad="Bogotá"><b>Casa del Valle</b><span>Calle 34 # 5-50, barrio La Merced, Bogotá</span></div></div><p class="fuente">verificado hace menos de 1 hora<span class="sep">&middot;</span><a href="https://www.elpais.com.co/cali/habilitan-centro-de-acopio-en-cali-tras-fuerte-terremoto-asi-puede-donar-agua-y-elementos-de-seguridad-1047.html" target="_blank" rel="noopener">El País, citando al alcalde Alejandro Eder, 10 ago 2026</a>. <span class="tag">Sin confirmar en el canal de la organizaci&oacute;n.</span></p></section><section data-grupo="2"><h2 class="org">Banco de Alimentos de Cali</h2><p class="ambito">Fundación Arquidiocesana, parte de la red ABACO</p><p class="lbl">Piden:</p><div class="cats"><div class="cat"><h4>Alimentos y salud</h4><ul><li>Alimentos no perecederos</li><li>Agua embotellada</li><li>Elementos de primeros auxilios</li></ul></div></div><p class="lbl">Se entrega en:</p><div class="puntos"><div class="punto" data-ciudad="Cali"><b>Fundación Arquidiocesana Banco de Alimentos</b><span>Calle 24 # 6-103, Cali</span></div></div><p class="fuente">verificado hace menos de 1 hora<span class="sep">&middot;</span><a href="https://www.infobae.com/colombia/2026/08/10/centros-de-acopio-habilitados-en-colombia-tras-el-terremoto-guia-por-ciudad-para-donar-y-ayudar-a-las-victimas/" target="_blank" rel="noopener">Infobae, citando a @AlcaldiaDeCali, 10 ago 2026</a>. <span class="tag">Sin confirmar en el canal de la organizaci&oacute;n.</span></p></section><section data-grupo="3"><h2 class="org">Donación de sangre en Manizales</h2><p class="ambito">El Hemocentro del Café y Tolima reportó escasez tras el sismo</p><p class="lbl">Piden:</p><div class="cats"><div class="cat"><h4>Sangre</h4><ul><li>Todos los grupos sanguíneos</li><li>O positivo y O negativo, especialmente necesarios</li></ul></div></div><p class="cond">Para donar: entre 18 y 65 años y en buenas condiciones de salud. Recepción desde las 12:30 p. m.</p><p class="lbl">Se entrega en:</p><div class="puntos"><div class="punto" data-ciudad="Manizales"><b>Canchas auxiliares del Estadio Palogrande</b><span>Junto a la estación de Bomberos Palogrande, Manizales</span></div><div class="punto" data-ciudad="Manizales"><b>Hemocentro del Café</b><span>Manizales</span></div></div><p class="fuente">verificado hace menos de 1 hora<span class="sep">&middot;</span><a href="https://www.lapatria.com/manizales/en-manizales-hacen-un-llamado-donar-sangre-tras-terremoto-conozca-los-puntos-habilitados" target="_blank" rel="noopener">La Patria, citando a la Alcaldía de Manizales, 10 ago 2026</a>. <span class="tag">Sin confirmar en el canal de la organizaci&oacute;n.</span></p></section><section data-grupo="4"><h2 class="org">Red de Bancos de Alimentos (ABACO)</h2><p class="ambito">Corredor humanitario hacia Chocó, Caldas, Risaralda y Valle. Atiende albergues, hospitales, centros de salud y familias autoalbergadas</p><p class="lbl">Piden:</p><div class="cats"><div class="cat"><h4>Alimentos priorizados</h4><ul><li>Agua</li><li>Arroz</li><li>Aceite</li><li>Pasta</li><li>Lentejas, fríjol, garbanzos y arvejas</li><li>Alimentos enlatados</li><li>Harina de maíz y de trigo</li><li>Panela</li><li>Chocolate</li><li>Frutos secos y avena</li><li>Coladas</li><li>Leche en polvo y leche UHT</li><li>Alimentos de consumo inmediato</li></ul></div><div class="cat"><h4>Higiene y abrigo</h4><ul><li>Jabón y champú</li><li>Cepillos y crema dental</li><li>Toallas higiénicas</li><li>Papel higiénico</li><li>Pañales</li><li>Toallitas húmedas</li><li>Toallas</li><li>Colchonetas</li><li>Mantas</li></ul></div></div><div class="negativo"><p class="lbl">No reciben:</p><ul><li>Productos vencidos o perecederos</li></ul></div><p class="cond">Para entregas grandes, ABACO pide avisar con un día hábil de anticipación la fecha y el producto, a ingridbrown@abaco.org.co y donacioneslogistica@abaco.org.co.</p><p class="lbl">Se entrega en:</p><div class="puntos"><div class="punto" data-ciudad="Pereira"><b>Banco de Alimentos de Pereira — punto alterno</b><span>Transversal 5 No. 6-30, Calle de Las Aromas, La Badea, Dosquebradas (área metropolitana de Pereira)</span></div><div class="punto" data-ciudad="Armenia"><b>Banco de Alimentos Monseñor Roberto López Londoño</b><span>Armenia</span></div><div class="punto" data-ciudad="Manizales"><b>Banco de Alimentos de Manizales</b><span>Manizales</span></div><div class="punto" data-ciudad="Ibagué"><b>Banco Arquidiocesano de Alimentos</b><span>Ibagué — punto intermedio</span></div></div><p class="fuente">verificado hace menos de 1 hora<span class="sep">&middot;</span><a href="https://www.portafolio.co/negocios/empresas/que-donar-y-donde-hacerlo-tras-el-terremoto-que-sacudio-a-colombia-500051" target="_blank" rel="noopener">Portafolio, citando a ABACO, 10 ago 2026</a>. <span class="tag">Sin confirmar en el canal de la organizaci&oacute;n.</span></p></section><section data-grupo="5"><h2 class="org">Medellín — Colombia se Levanta</h2><p class="ambito">Campaña de la Alcaldía con los bancos de alimentos</p><p class="lbl">Piden:</p><div class="cats"><div class="cat"><h4>Alimentos e higiene</h4><ul><li>Alimentos no perecederos</li><li>Artículos de higiene</li><li>Elementos de primera necesidad</li></ul></div></div><p class="lbl">Se entrega en:</p><div class="puntos"><div class="punto" data-ciudad="Medellín"><b>Fundación Banco de Alimentos</b><span>Carrera 52 # 30A-97, Medellín</span></div><div class="punto" data-ciudad="Medellín"><b>Fundación Saciar</b><span>Carrera 52 # 25-261, Medellín</span></div></div><p class="fuente">verificado hace menos de 1 hora<span class="sep">&middot;</span><a href="https://www.lasillavacia.com/en-vivo/terremoto-capitales-habilitaron-centros-de-acopio-para-la-emergencia/" target="_blank" rel="noopener">La Silla Vacía, citando a la Alcaldía de Medellín, 10 ago 2026</a>. <span class="tag">Sin confirmar en el canal de la organizaci&oacute;n.</span></p></section><section data-grupo="6"><h2 class="org">Barranquilla</h2><p class="ambito">Único punto que pide expresamente ropa y artículos para mascotas. Abierto 24 horas</p><p class="lbl">Piden:</p><div class="cats"><div class="cat"><h4>Lo que reciben</h4><ul><li>Alimentos</li><li>Ropa en buen estado</li><li>Productos de higiene</li><li>Insumos para bebés</li><li>Insumos para mascotas</li></ul></div></div><p class="lbl">Se entrega en:</p><div class="puntos"><div class="punto" data-ciudad="Barranquilla"><b>Punto de acopio de la Alcaldía</b><span>Carrera 43 # 6-120, sector Barranquillita, Barranquilla</span></div></div><p class="fuente">verificado hace menos de 1 hora<span class="sep">&middot;</span><a href="https://www.noticiasrcn.com/colombia/centros-de-acopio-habilitados-en-colombia-para-recibir-donaciones-tras-sismo-de-7-4-1048881" target="_blank" rel="noopener">Noticias RCN, citando a la Alcaldía de Barranquilla, 10 ago 2026</a>. <span class="tag">Sin confirmar en el canal de la organizaci&oacute;n.</span></p></section><section data-grupo="7"><p class="inst">Esto no es un punto de acopio para ciudadanos.</p><h2 class="org">Hospital San Francisco de Asís, Quibdó</h2><p class="ambito">Para instituciones de salud, laboratorios y proveedores — no es un punto de acopio ciudadano</p><p class="lbl">Piden:</p><div class="cats"><div class="cat"><h4>Déficit crítico declarado</h4><ul><li>Compresas estériles</li><li>Gasas hospitalarias</li><li>Suturas de todas las referencias</li><li>Yeso ortopédico y vendas enyesadas</li><li>Unidades de sangre y hemoderivados</li><li>Reactivos de laboratorio clínico</li><li>Suero antiofídico polivalente</li></ul></div></div><p class="cond">Es el único hospital de segundo nivel del Chocó. El llamado es para sostener urgencias, cirugía, hospitalización y laboratorio. Coordine la entrega con la institución antes de despachar.</p><p class="lbl">Se entrega en:</p><div class="puntos"><div class="punto" data-ciudad="Quibdó"><b>Nueva ESE Hospital Departamental San Francisco de Asís</b><span>Quibdó, Chocó</span></div></div><p class="fuente">verificado hace menos de 1 hora<span class="sep">&middot;</span><a href="https://www.eltiempo.com/colombia/otras-ciudades/hospital-de-quibdo-pide-medicamentos-e-insumos-urgentes-tras-terremoto-en-colombia-del-lunes-10-de-agosto-este-es-el-listado-de-elementos-solicitados-3577501" target="_blank" rel="noopener">El Tiempo, citando al hospital, 11 ago 2026</a>. <span class="tag">Sin confirmar en el canal de la organizaci&oacute;n.</span></p></section><section id="sec-dinero"><h2 class="simple">Donaciones en dinero</h2><p class="ambito">Llegan a donde la organizaci&oacute;n opere, incluidas las zonas donde todav&iacute;a no hay punto de acopio.</p><div class="aviso-plata">Una cuenta bancaria no se puede verificar a simple vista: un dígito cambiado la convierte en la de otra persona y la transferencia es irreversible. Un dominio sí se verifica: si llega a bancodealimentos.org.co o a abaco.org.co, sabe con quién está tratando. Por eso aquí el enlace va primero y el número solo aparece cuando lo publicó la organización en su propio canal.</div><div class="canal"><h3>Cruz Roja Colombiana</h3><p class="dtexto">Campaña #TodosPorColombia. Portal propio de donación para esta emergencia, con pago en línea.</p><a class="dlink" href="https://ayuda.cruzrojacolombiana.org/" target="_blank" rel="noopener">ayuda.cruzrojacolombiana.org</a><div class="cuenta sin"><span class="ck">Sin n&uacute;mero de cuenta publicado aqu&iacute;</span></div><p class="dnota">Su portal oficial no publica número de cuenta: recauda por pasarela de pago. Circula en prensa una cuenta Davivienda que no aparece en el canal de la organización, por eso no la reproducimos aquí.</p><p class="dfuente"><a href="https://ayuda.cruzrojacolombiana.org/" target="_blank" rel="noopener">Portal de emergencia de la Cruz Roja Colombiana (leído directamente)</a></p></div><div class="canal"><h3>Banco de Alimentos de Bogotá</h3><p class="dtexto">Campaña #JuntosContraElHambre.</p><a class="dlink" href="https://www.bancodealimentos.org.co" target="_blank" rel="noopener">www.bancodealimentos.org.co</a><div class="cuenta"><span class="ck">Verificado en el canal de la organizaci&oacute;n</span><b>Llave Bre-B 0091677852</b></div><p class="dnota">La llave coincide en la publicación de la organización y en cuatro medios independientes.</p><p class="dfuente"><a href="https://www.semana.com/nacion/articulo/bancos-de-alimentos-activan-ayuda-para-damnificados-por-el-terremoto-en-colombia-asi-puede-donar/202641/" target="_blank" rel="noopener">Publicación de la propia organización en X, reproducida por Semana</a></p></div><div class="canal"><h3>ABACO — Asociación de Bancos de Alimentos</h3><p class="dtexto">Campaña de emergencia con corredor humanitario. Los fondos financian transporte humanitario y compra de canasta básica.</p><a class="dlink" href="https://donahoy.abaco.org.co/colombia2026" target="_blank" rel="noopener">donahoy.abaco.org.co/colombia2026</a><div class="cuenta sin"><span class="ck">Sin n&uacute;mero de cuenta publicado aqu&iacute;</span></div><p class="dnota">Los medios reportan dos cuentas distintas porque la organización tiene dos: una de ahorros y una corriente. No las reproducimos porque los números aparecen en la prensa y no en una publicación de ABACO que hayamos podido leer. En su plataforma están al día.</p><p class="dfuente"><a href="https://www.noticiascaracol.com/colombia/terremoto-en-colombia-donde-donar-dinero-alimentos-y-ayudas-para-los-afectados-so35" target="_blank" rel="noopener">Reportado por Noticias Caracol, Cambio y Pulzo</a></p></div><div class="canal"><h3>Fundación Plan</h3><p class="dtexto">Fondo de respuesta para niñas, niños, adolescentes y sus familias: alojamiento temporal, agua y saneamiento, seguridad alimentaria, educación en emergencia y apoyo psicosocial.</p><a class="dlink" href="https://x.com/FundacionPlan" target="_blank" rel="noopener">x.com/FundacionPlan</a><div class="cuenta sin"><span class="ck">Sin n&uacute;mero de cuenta publicado aqu&iacute;</span></div><p class="dnota">Enlazamos su cuenta oficial en X y no un sitio web porque el dominio fundacionplan.org pertenece a otra organización distinta. La campaña se abre desde el código de su publicación.</p><p class="dfuente"><a href="https://www.noticiascaracol.com/colombia/terremoto-en-colombia-donde-donar-dinero-alimentos-y-ayudas-para-los-afectados-so35" target="_blank" rel="noopener">Publicación de @FundacionPlan, reproducida por Noticias Caracol</a></p></div><p class="cond" style="margin-top:20px">Si le llega una cuenta por cadena de WhatsApp y no est&aacute; aqu&iacute;, no transfiera sin confirmarla en el sitio oficial de la organizaci&oacute;n.</p></section><section id="sec-pendientes"><h2 class="simple">Puntos que a&uacute;n no dicen qu&eacute; necesitan</h2><div class="pendiente" data-ciudad="Pereira"><b>Los siete centros CAFÉ de Pereira</b><span>La Alcaldía habilitó Consota, Perla del Otún, El Remanso, Kennedy, Ormaza, San Nicolás y Comuna del Café, pero no publicó qué necesitan: lo comunicó por X con una imagen, sin lista en texto. Si va a uno de ellos, consulte @Alcaldiapereira antes. El Banco de Alimentos de Pereira sí publicó lista y aparece arriba. </span><a href="https://www.semana.com/nacion/articulo/conozca-los-puntos-de-donacion-tras-el-fuerte-terremoto-en-colombia-este-lunes-10-de-agosto/202610/" target="_blank" rel="noopener" style="font-size:.86rem">Fuente</a></div><div class="pendiente" data-ciudad="Buenaventura"><b>Buenaventura</b><span>El banco de alimentos local resultó afectado por el sismo. ABACO evalúa puntos alternos. </span><a href="https://cambiocolombia.com/pais/articulo/2026/8/donde-y-que-puede-donar-para-ayudar-a-los-damnificados-estos-son-los-centros-de-acopio-en-las-ciudades-principales-de-colombia" target="_blank" rel="noopener" style="font-size:.86rem">Fuente</a></div><div class="pendiente" data-ciudad="Quibdó"><b>Gobernación del Chocó y Alcaldía de Quibdó</b><span>El departamento del epicentro sigue sin punto de acopio ciudadano anunciado. La vía disponible es entregar en Cruz Roja, que declara enviar a Quibdó, o donar en dinero. </span><a href="https://cambiocolombia.com/pais/articulo/2026/8/donde-y-que-puede-donar-para-ayudar-a-los-damnificados-estos-son-los-centros-de-acopio-en-las-ciudades-principales-de-colombia" target="_blank" rel="noopener" style="font-size:.86rem">Fuente</a></div></section><footer>Cada dato de esta página viene de una publicación de la organización que recibe la donación, o de un medio que la cita, y ese origen está enlazado junto a cada lista. Si un punto no aparece aquí, es porque no ha publicado qué necesita, no porque no exista. La información cambia rápido: revise la fecha de verificación antes de confiar en una lista.</footer></div><script type="application/json" id="agg">{"todas": [{"t": "Alimentos no perecederos", "orgs": ["Cruz Roja Colombiana", "Banco de Alimentos de Cali", "Red de Bancos de Alimentos (ABACO)", "Medellín — Colombia se Levanta", "Barranquilla"]}, {"t": "Agua embotellada", "orgs": ["Cruz Roja Colombiana", "Alcaldía de Cali", "Banco de Alimentos de Cali", "Red de Bancos de Alimentos (ABACO)"]}, {"t": "Artículos de higiene personal", "orgs": ["Cruz Roja Colombiana", "Red de Bancos de Alimentos (ABACO)", "Medellín — Colombia se Levanta", "Barranquilla"]}, {"t": "Colchonetas", "orgs": ["Cruz Roja Colombiana", "Alcaldía de Cali", "Red de Bancos de Alimentos (ABACO)"]}, {"t": "Aceite", "orgs": ["Cruz Roja Colombiana", "Red de Bancos de Alimentos (ABACO)"]}, {"t": "Panela", "orgs": ["Cruz Roja Colombiana", "Red de Bancos de Alimentos (ABACO)"]}, {"t": "Insumos de primeros auxilios", "orgs": ["Cruz Roja Colombiana", "Banco de Alimentos de Cali"]}], "Cali": [{"t": "Agua embotellada", "orgs": ["Alcaldía de Cali", "Banco de Alimentos de Cali"]}, {"t": "Guantes de construcción", "orgs": ["Alcaldía de Cali"]}, {"t": "Cascos", "orgs": ["Alcaldía de Cali"]}, {"t": "Gafas de seguridad", "orgs": ["Alcaldía de Cali"]}, {"t": "Colchonetas", "orgs": ["Alcaldía de Cali"]}, {"t": "Alimentos no perecederos", "orgs": ["Banco de Alimentos de Cali"]}, {"t": "Elementos de primeros auxilios", "orgs": ["Banco de Alimentos de Cali"]}], "Manizales": [{"t": "Todos los grupos sanguíneos", "orgs": ["Donación de sangre en Manizales"]}, {"t": "O positivo y O negativo, especialmente necesarios", "orgs": ["Donación de sangre en Manizales"]}, {"t": "Agua", "orgs": ["Red de Bancos de Alimentos (ABACO)"]}, {"t": "Arroz", "orgs": ["Red de Bancos de Alimentos (ABACO)"]}, {"t": "Aceite", "orgs": ["Red de Bancos de Alimentos (ABACO)"]}, {"t": "Pasta", "orgs": ["Red de Bancos de Alimentos (ABACO)"]}, {"t": "Lentejas, fríjol, garbanzos y arvejas", "orgs": ["Red de Bancos de Alimentos (ABACO)"]}], "Armenia": [{"t": "Agua", "orgs": ["Red de Bancos de Alimentos (ABACO)"]}, {"t": "Arroz", "orgs": ["Red de Bancos de Alimentos (ABACO)"]}, {"t": "Aceite", "orgs": ["Red de Bancos de Alimentos (ABACO)"]}, {"t": "Pasta", "orgs": ["Red de Bancos de Alimentos (ABACO)"]}, {"t": "Lentejas, fríjol, garbanzos y arvejas", "orgs": ["Red de Bancos de Alimentos (ABACO)"]}, {"t": "Alimentos enlatados", "orgs": ["Red de Bancos de Alimentos (ABACO)"]}, {"t": "Harina de maíz y de trigo", "orgs": ["Red de Bancos de Alimentos (ABACO)"]}], "Quibdó": [], "Pereira": [{"t": "Agua", "orgs": ["Red de Bancos de Alimentos (ABACO)"]}, {"t": "Arroz", "orgs": ["Red de Bancos de Alimentos (ABACO)"]}, {"t": "Aceite", "orgs": ["Red de Bancos de Alimentos (ABACO)"]}, {"t": "Pasta", "orgs": ["Red de Bancos de Alimentos (ABACO)"]}, {"t": "Lentejas, fríjol, garbanzos y arvejas", "orgs": ["Red de Bancos de Alimentos (ABACO)"]}, {"t": "Alimentos enlatados", "orgs": ["Red de Bancos de Alimentos (ABACO)"]}, {"t": "Harina de maíz y de trigo", "orgs": ["Red de Bancos de Alimentos (ABACO)"]}], "Buenaventura": [], "Bogotá": [{"t": "Colchonetas", "orgs": ["Cruz Roja Colombiana", "Alcaldía de Cali"]}, {"t": "Agua embotellada", "orgs": ["Cruz Roja Colombiana", "Alcaldía de Cali"]}, {"t": "Cobijas y mantas", "orgs": ["Cruz Roja Colombiana"]}, {"t": "Almohadas", "orgs": ["Cruz Roja Colombiana"]}, {"t": "Toldillos", "orgs": ["Cruz Roja Colombiana"]}, {"t": "Arroz, pastas y harina", "orgs": ["Cruz Roja Colombiana"]}, {"t": "Aceite", "orgs": ["Cruz Roja Colombiana"]}], "Medellín": [{"t": "Alimentos no perecederos", "orgs": ["Medellín — Colombia se Levanta"]}, {"t": "Artículos de higiene", "orgs": ["Medellín — Colombia se Levanta"]}, {"t": "Elementos de primera necesidad", "orgs": ["Medellín — Colombia se Levanta"]}], "Barranquilla": [{"t": "Alimentos", "orgs": ["Barranquilla"]}, {"t": "Ropa en buen estado", "orgs": ["Barranquilla"]}, {"t": "Productos de higiene", "orgs": ["Barranquilla"]}, {"t": "Insumos para bebés", "orgs": ["Barranquilla"]}, {"t": "Insumos para mascotas", "orgs": ["Barranquilla"]}], "Ibagué": [{"t": "Agua", "orgs": ["Red de Bancos de Alimentos (ABACO)"]}, {"t": "Arroz", "orgs": ["Red de Bancos de Alimentos (ABACO)"]}, {"t": "Aceite", "orgs": ["Red de Bancos de Alimentos (ABACO)"]}, {"t": "Pasta", "orgs": ["Red de Bancos de Alimentos (ABACO)"]}, {"t": "Lentejas, fríjol, garbanzos y arvejas", "orgs": ["Red de Bancos de Alimentos (ABACO)"]}, {"t": "Alimentos enlatados", "orgs": ["Red de Bancos de Alimentos (ABACO)"]}, {"t": "Harina de maíz y de trigo", "orgs": ["Red de Bancos de Alimentos (ABACO)"]}]}</script><script>
+(function(){
+  var D=JSON.parse(document.getElementById('agg').textContent);
+  var sel=document.getElementById('sel-ciudad');
+  var mbtns=[].slice.call(document.querySelectorAll('.mbtn'));
+  var topBox=document.getElementById('top');
+  var vacio=document.getElementById('vacio');
+  var noLlevar=document.getElementById('no-llevar');
+  var secDinero=document.getElementById('sec-dinero');
+  var secPend=document.getElementById('sec-pendientes');
+  var boxCiudades=document.getElementById('ciudades');
+  var notaDinero=document.getElementById('nota-dinero');
+  var estado={modo:'especie', ciudad:'todas'};
+
+  function especie(){
+    var vis=0;
+    [].slice.call(document.querySelectorAll('section[data-grupo]')).forEach(function(s){
+      var n=0;
+      [].slice.call(s.querySelectorAll('.punto')).forEach(function(p){
+        var ok=(estado.ciudad==='todas')||(p.dataset.ciudad===estado.ciudad);
+        p.hidden=!ok; if(ok) n++;
+      });
+      s.hidden=n===0; if(n>0) vis++;
+    });
+
+    [].slice.call(document.querySelectorAll('.pendiente')).forEach(function(e){
+      e.hidden=!(estado.ciudad==='todas'||e.dataset.ciudad===estado.ciudad);
+    });
+    if(secPend){
+      var q=[].slice.call(secPend.querySelectorAll('.pendiente'))
+              .filter(function(e){return !e.hidden;});
+      secPend.hidden=q.length===0;
+    }
+
+    var a=D[estado.ciudad]||[];
+    if(a.length && vis>0){
+      topBox.hidden=false;
+      topBox.innerHTML='<h2>'+(estado.ciudad==='todas'?'Lo que más piden'
+        :'Lo que más piden en '+estado.ciudad)+'</h2>'+
+        '<p class="top-sub">Resumen de las listas de abajo. Cuando varias '+
+        'organizaciones coinciden en un artículo, se indica cuántas.</p>'+
+        a.map(function(f){
+          var n=f.orgs.length>1?'<span class="top-n">'+f.orgs.length+' organizaciones</span>'
+                               :'<span class="top-n vacia"></span>';
+          return '<div class="top-item">'+n+'<span class="top-t">'+f.t+
+            '</span><span class="top-o">'+f.orgs.join(' · ')+'</span></div>';
+        }).join('')+
+        '<p class="top-pie">Sirve para saber qué comprar. Antes de salir, '+
+        'confirme abajo qué recibe el punto al que va.</p>';
+    } else { topBox.hidden=true; }
+
+    if(vacio) vacio.hidden = vis>0;
+    if(noLlevar) noLlevar.hidden = vis===0;
+    if(secDinero) secDinero.hidden=true;
+  }
+
+  function dinero(){
+    // El dinero no tiene ciudad: llega donde la organizacion opere, incluidas
+    // las zonas sin acopio. Por eso el filtro de ciudad se retira, en vez de
+    // dejarse activo sin efecto.
+    [].slice.call(document.querySelectorAll('section[data-grupo]'))
+      .forEach(function(s){ s.hidden=true; });
+    if(secPend) secPend.hidden=true;
+    if(noLlevar) noLlevar.hidden=true;
+    if(vacio) vacio.hidden=true;
+    topBox.hidden=true;
+    if(secDinero) secDinero.hidden=false;
+  }
+
+  function pinta(){
+    mbtns.forEach(function(b){
+      b.setAttribute('aria-pressed', b.dataset.modo===estado.modo?'true':'false');
+    });
+    if(sel && sel.value!==estado.ciudad) sel.value=estado.ciudad;
+    var esDinero = estado.modo==='dinero';
+    if(boxCiudades) boxCiudades.hidden=esDinero;
+    if(notaDinero) notaDinero.hidden=!esDinero;
+
+    if(esDinero) dinero(); else especie();
+
+    var h = esDinero ? 'dinero'
+          : (estado.ciudad==='todas' ? '' : encodeURIComponent(estado.ciudad));
+    history.replaceState(null,'', h?('#'+h):location.pathname);
+  }
+
+  mbtns.forEach(function(b){
+    b.addEventListener('click',function(){
+      estado.modo=b.dataset.modo; pinta(); window.scrollTo(0,0);
+    });
+  });
+  if(sel) sel.addEventListener('change',function(){
+    estado.ciudad=sel.value; estado.modo='especie'; pinta();
+  });
+  var irD=document.querySelector('.ir-dinero');
+  if(irD) irD.addEventListener('click',function(){
+    estado.modo='dinero'; pinta(); window.scrollTo(0,0);
+  });
+
+  var h=decodeURIComponent(location.hash.slice(1));
+  if(h==='dinero'){ estado.modo='dinero'; }
+  else if(h && sel && [].slice.call(sel.options).some(function(o){return o.value===h;})){
+    estado.ciudad=h;
+  }
+  pinta();
+})();
+</script></body></html>
